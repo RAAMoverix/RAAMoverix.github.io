@@ -1,0 +1,72 @@
+/* Estilo general */
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #0b0b0b 0%, #1a1a1a 100%);
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  padding: 4em 1em;
+  background: radial-gradient(circle at center, #ff4c00 0%, #1a1a1a 80%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(255, 76, 0, 0.3);
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* Secciones */
+section {
+  max-width: 900px;
+  margin: 3em auto;
+  padding: 2em;
+  background-color: #121212;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 76, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 76, 0, 0.3);
+}
+
+h2 {
+  color: #ff4c00;
+  border-bottom: 2px solid #ff4c00;
+  display: inline-block;
+  margin-bottom: 1em;
+  font-size: 1.8em;
+}
+
+/* Pie de página */
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: #0b0b0b;
+  font-size: 0.9em;
+  color: #888;
+  border-top: 1px solid #222;
+}
+
+/* Animaciones suaves */
+a, h2, li {
+  transition: color 0.3s ease;
+}
+
+li:hover {
+  color: #ff4c00;
+}
