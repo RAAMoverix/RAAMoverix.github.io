@@ -1,85 +1,441 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemelos Digitales + IA</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Services - Gemelos Digitales e IA para Real Estate</title>
+    
+    <!-- Tailwind CSS (Para los estilos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (Para los iconos) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilos adicionales para animaciones suaves */
+        html {
+            scroll-behavior: smooth;
+        }
+        .faq-content {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans text-slate-800 bg-white min-h-screen relative">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <p class="pre-title">Propietarios, anfitriones y desarrolladores</p>
-      <h1>No vendas metros cuadrados, vende certezas.</h1>
-      <p class="subtitle">Recorridos 360°, desamueblado virtual con IA y un agente digital que atiende a tus prospectos 24/7.</p>
-      <a href="#demo" class="cta">✨ Ver Demo en Vivo</a>
-    </div>
-  </section>
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="#contacto" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all z-50 flex items-center justify-center group" title="Habla con nuestro experto">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-3 transition-all duration-300 ease-in-out font-medium">
+            Habla con un experto
+        </span>
+    </a>
 
-  <!-- DOLORES -->
-  <section class="dolores">
-    <h2>¿Te suena familiar?</h2>
-    <div class="cards">
-      <div class="card">¿Cansado de mostrar el depa 20 veces a curiosos que no rentan?</div>
-      <div class="card">¿Tus fotos en Airbnb no logran subir tu tarifa por noche?</div>
-      <div class="card">¿Tu showroom físico cuesta millones y solo abre 8 horas al día?</div>
-    </div>
-  </section>
+    <!-- NAVEGACIÓN -->
+    <nav class="bg-slate-950 text-white py-4 px-8 flex justify-between items-center sticky top-0 z-40 border-b border-slate-800">
+        <div class="flex items-center space-x-2">
+            <i data-lucide="box" class="text-yellow-500 w-7 h-7"></i>
+            <div class="text-2xl font-bold tracking-tight">7<span class="font-light text-slate-400">Services</span></div>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-light tracking-wide items-center">
+            <a href="#dolores" class="hover:text-yellow-500 transition-colors">Para quién es</a>
+            <a href="#solucion" class="hover:text-yellow-500 transition-colors">Tecnología</a>
+            <a href="#demo" class="hover:text-yellow-500 transition-colors">Demo</a>
+            <a href="#precios" class="hover:text-yellow-500 transition-colors">Precios</a>
+            <a href="#demo" class="bg-white text-slate-900 px-5 py-2 rounded-sm font-medium hover:bg-yellow-500 hover:text-white transition-all">
+                VER DEMO
+            </a>
+        </div>
+    </nav>
 
-  <!-- SOLUCIÓN -->
-  <section class="solucion">
-    <h2>La Solución Tecnológica</h2>
-    <ul>
-      <li>🌐 Vive la propiedad desde cualquier parte del mundo.</li>
-      <li>🛋️ Visualiza espacios despejados y modernos con un clic.</li>
-      <li>🤖 Un concierge digital atiende a tus prospectos 24/7.</li>
-      <li>⏳ Ahorra hasta el 80% de visitas innecesarias.</li>
-      <li>💰 Cierra más rápido y con mayor valor percibido.</li>
-    </ul>
-  </section>
+    <!-- 1. HERO SECTION (El Gancho) -->
+    <header class="relative bg-slate-900 text-white py-32 px-6 lg:px-20 min-h-[85vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <div class="w-full h-full bg-slate-800 flex items-center justify-center">
+                <i data-lucide="box" class="text-slate-700 animate-pulse w-32 h-32"></i>
+                <p class="absolute text-slate-600 font-mono text-sm">[Video Background: Dollhouse 3D Rotando]</p>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent z-0"></div>
+        
+        <div class="relative z-10 max-w-3xl">
+            <div class="inline-flex items-center space-x-2 bg-slate-800/50 border border-slate-700 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
+                <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-wider text-slate-300 uppercase">El futuro del Real Estate</span>
+            </div>
+            
+            <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+                No vendas metros cuadrados, <span class="text-yellow-500">vende certezas.</span>
+            </h1>
+            
+            <p class="text-xl lg:text-2xl font-light text-slate-300 mb-10 max-w-2xl leading-relaxed">
+                Infraestructura digital para activos inmobiliarios. Recorridos 360°, desamueblado virtual con IA y agentes de venta trabajando para ti 24/7.
+            </p>
+            
+            <a href="#demo" class="inline-flex bg-yellow-500 text-slate-950 text-lg px-8 py-4 rounded-sm font-bold tracking-wide hover:bg-yellow-400 transition-all items-center justify-center space-x-3 shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:-translate-y-1">
+                <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+                <span>Ver Demo en Vivo</span>
+            </a>
+        </div>
+    </header>
 
-  <!-- DEMO -->
-  <section id="demo" class="demo">
-    <h2>Demo Interactiva</h2>
-    <p>Aquí se mostraría un visor Matterport embebido directamente en la página.</p>
-  </section>
+    <!-- 2. SECCIÓN DE "DOLORES" (Agitación) -->
+    <section id="dolores" class="py-24 px-6 lg:px-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">El modelo tradicional te está costando dinero.</h2>
+                <p class="text-slate-500 text-lg">Identifica tu sector y descubre lo que estás perdiendo hoy.</p>
+            </div>
 
-  <!-- PAQUETES -->
-  <section class="paquetes">
-    <h2>Paquetes y Precios</h2>
-    <div class="cards">
-      <div class="card">Digital Launch ($24,000): Lo esencial para rentar rápido.</div>
-      <div class="card">Business Asset ($48,000): Para anfitriones de Airbnb y oficinas.</div>
-      <div class="card">Elite Developer ($92,000): Solución total para grandes superficies.</div>
-    </div>
-  </section>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 shadow-lg border-t-4 border-slate-800 rounded-sm hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="key" class="text-slate-400 mb-6 w-10 h-10"></i>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Para Rentas</h3>
+                    <p class="text-slate-600 font-medium italic text-lg leading-relaxed">
+                        "¿Cansado de mostrar el depa 20 veces a curiosos que al final no rentan?"
+                    </p>
+                </div>
 
-  <!-- BENEFICIO -->
-  <section class="beneficio">
-    <h2>El Filtro de Curiosos</h2>
-    <p>Nuestra tecnología filtra el 80% de las visitas innecesarias. Solo recibes llamadas de prospectos calificados.</p>
-  </section>
+                <div class="bg-white p-8 shadow-lg border-t-4 border-yellow-500 rounded-sm hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="home" class="text-yellow-500 mb-6 w-10 h-10"></i>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Para Airbnb</h3>
+                    <p class="text-slate-600 font-medium italic text-lg leading-relaxed">
+                        "¿Tus fotos planas no logran transmitir el valor real para que subas tu tarifa por noche?"
+                    </p>
+                </div>
 
-  <!-- FAQ -->
-  <section class="faq">
-    <h2>Preguntas Frecuentes</h2>
-    <p><strong>¿Es caro?</strong> Recuperas la inversión en semanas gracias al ahorro de tiempo y visitas.</p>
-    <p><strong>¿Cuánto tarda?</strong> Entre 60 y 120 minutos de escaneo inicial.</p>
-    <p><strong>¿Es complicado?</strong> Nada. Tus prospectos solo hacen clic y entran al recorrido.</p>
-  </section>
+                <div class="bg-white p-8 shadow-lg border-t-4 border-slate-800 rounded-sm hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="building" class="text-slate-400 mb-6 w-10 h-10"></i>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Para Desarrolladores</h3>
+                    <p class="text-slate-600 font-medium italic text-lg leading-relaxed">
+                        "¿Tu Showroom físico cuesta millones de pesos mantener y solo puede abrir 8 horas al día?"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Botón flotante de WhatsApp: "Habla con nuestro experto"</p>
-    <form>
-      <input type="text" placeholder="Nombre">
-      <input type="tel" placeholder="Teléfono">
-      <input type="text" placeholder="Tipo de Propiedad">
-      <button type="submit">Enviar</button>
-    </form>
-  </footer>
+    <!-- 3. LA SOLUCIÓN TECNOLÓGICA (El Diferenciador) -->
+    <section id="solucion" class="py-24 px-6 lg:px-20 bg-slate-950 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-6">Tus 3 Nuevas Armas de Venta</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
 
+            <div class="space-y-20">
+                <!-- Arma 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-yellow-500">
+                            <i data-lucide="box" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Gemelos Digitales (Matterport)</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed">
+                            Inmersión total y absoluta. Permite que tu cliente camine libremente por la propiedad, tome medidas y explore cada rincón desde cualquier parte del mundo. No son fotos 360°, es una réplica exacta del espacio físico.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 bg-slate-800 rounded-lg aspect-video flex items-center justify-center border border-slate-700 relative overflow-hidden group w-full">
+                         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                         <div class="relative z-10 flex flex-col items-center">
+                            <i data-lucide="box" class="text-white/80 mb-2 w-12 h-12"></i>
+                            <span class="text-white/80 font-mono text-sm tracking-widest uppercase">Escaneo de Precisión</span>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Arma 2 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-yellow-500">
+                            <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Desamueblado Virtual con IA</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed">
+                            El "charolazo" definitivo. Elimina digitalmente muebles viejos, escombros o decoración desactualizada con un solo clic. Entregamos un lienzo en blanco impecable para que el cliente pueda visualizar inmediatamente su futuro hogar.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 flex gap-4 w-full">
+                        <div class="w-1/2 aspect-square bg-slate-800 rounded-lg flex flex-col items-center justify-center border border-slate-700 relative overflow-hidden">
+                           <div class="absolute inset-0 bg-slate-700/50 mix-blend-multiply"></div>
+                           <span class="absolute top-4 left-4 bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded font-bold">ANTES</span>
+                           <p class="text-slate-500 text-sm z-10 font-mono">Con muebles</p>
+                        </div>
+                        <div class="w-1/2 aspect-square bg-slate-800 rounded-lg flex flex-col items-center justify-center border border-yellow-500/30 relative overflow-hidden">
+                           <span class="absolute top-4 left-4 bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded font-bold">DESPUÉS (IA)</span>
+                           <p class="text-slate-300 text-sm z-10 font-mono">Lienzo en blanco</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arma 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-yellow-500">
+                            <i data-lucide="bot" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Agente de IA Concierge</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed">
+                            Un asistente inteligente y personalizado que vive dentro de tu página. Responde dudas técnicas del inmueble al instante, califica al prospecto en tiempo real y agenda citas automáticamente en tu calendario.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 bg-slate-800 rounded-lg aspect-video p-6 border border-slate-700 flex flex-col justify-end w-full">
+                        <div class="bg-slate-700 w-3/4 p-3 rounded-t-xl rounded-br-xl mb-4 self-start">
+                            <p class="text-sm text-slate-200">¿De qué material son las barras de la cocina?</p>
+                        </div>
+                        <div class="bg-yellow-500/20 border border-yellow-500/30 w-3/4 p-3 rounded-t-xl rounded-bl-xl self-end">
+                            <p class="text-sm text-slate-200"><span class="font-bold text-yellow-500">IA:</span> Las barras son de cuarzo blanco resistente al calor. ¿Te gustaría agendar una visita virtual o presencial para conocer los acabados?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. BENEFICIO DESTACADO -->
+    <section class="py-20 px-6 lg:px-20 bg-yellow-500 text-slate-900 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-6">El "Filtro de Curiosos" Definitivo</h2>
+            <p class="text-xl font-medium leading-relaxed mb-8">
+                Nuestra tecnología filtra el 80% de las visitas innecesarias. Al brindar una experiencia inmersiva completa desde el celular, <strong class="font-black border-b-2 border-slate-900">solo recibes llamadas de prospectos altamente calificados</strong> que ya visitaron, midieron y aprobaron el inmueble digitalmente. Te devolvemos tu tiempo.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. DEMO INTERACTIVA -->
+    <section id="demo" class="py-24 px-6 lg:px-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Experimenta la fluidez tú mismo</h2>
+                <p class="text-slate-500 text-lg">Navega por un recorrido estándar corporativo. Así es como tus clientes verán tu propiedad.</p>
+            </div>
+
+            <div class="w-full aspect-video bg-slate-200 rounded-sm shadow-2xl relative flex items-center justify-center border border-slate-300 overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-60"></div>
+                <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all"></div>
+                
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i data-lucide="play" class="text-slate-900 ml-1 w-10 h-10 fill-current"></i>
+                    </div>
+                    <p class="font-bold text-white tracking-widest uppercase shadow-black drop-shadow-md">Cargar Recorrido 3D</p>
+                    <p class="text-xs text-white/80 mt-2 font-mono">(Simulador de iframe Matterport)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PAQUETES Y PRECIOS -->
+    <section id="precios" class="py-24 px-6 lg:px-20 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Inversión Transparente</h2>
+                <p class="text-slate-500 text-lg">Infraestructura digital escalable según el tamaño de tu operación.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Paquete 1 -->
+                <div class="border border-slate-200 rounded-lg p-8 flex flex-col hover:border-slate-400 transition-colors bg-slate-50">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Digital Launch</h3>
+                    <p class="text-slate-500 text-sm mb-6 h-10">Lo esencial para rentar o vender rápido.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">$24,000</span>
+                        <span class="text-slate-500"> MXN</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start text-sm text-slate-700"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Escaneo 3D Matterport</li>
+                        <li class="flex items-start text-sm text-slate-700"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Planos de planta 2D</li>
+                        <li class="flex items-start text-sm text-slate-700"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Links para portales y redes</li>
+                    </ul>
+                    <button class="w-full bg-slate-900 text-white py-3 rounded-sm font-semibold hover:bg-slate-800 transition-colors">Elegir Plan</button>
+                </div>
+
+                <!-- Paquete 2 -->
+                <div class="border-2 border-yellow-500 rounded-lg p-8 flex flex-col relative bg-white shadow-xl transform md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-500 text-slate-950 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">
+                        Más Popular
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Business Asset</h3>
+                    <p class="text-slate-500 text-sm mb-6 h-10">Para anfitriones de Airbnb y oficinas que buscan flujo constante.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">$48,000</span>
+                        <span class="text-slate-500"> MXN</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start text-sm text-slate-700"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Todo lo de Digital Launch</li>
+                        <li class="flex items-start text-sm text-slate-900 font-bold"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Desamueblado Virtual (IA)</li>
+                        <li class="flex items-start text-sm text-slate-700"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Integración con Google Street View</li>
+                        <li class="flex items-start text-sm text-slate-700"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Etiquetas interactivas en el recorrido</li>
+                    </ul>
+                    <button class="w-full bg-yellow-500 text-slate-900 py-3 rounded-sm font-bold hover:bg-yellow-400 transition-colors">Elegir Plan</button>
+                </div>
+
+                <!-- Paquete 3 -->
+                <div class="border border-slate-200 rounded-lg p-8 flex flex-col hover:border-slate-400 transition-colors bg-slate-950 text-white">
+                    <h3 class="text-xl font-bold text-white mb-2">Elite Developer</h3>
+                    <p class="text-slate-400 text-sm mb-6 h-10">La solución total para grandes superficies, estadios o showrooms enteros.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">$92,000</span>
+                        <span class="text-slate-400"> MXN</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start text-sm text-slate-300"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Todo lo de Business Asset</li>
+                        <li class="flex items-start text-sm text-white font-bold"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Agente IA Concierge 24/7</li>
+                        <li class="flex items-start text-sm text-slate-300"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Escaneo de grandes volúmenes</li>
+                        <li class="flex items-start text-sm text-slate-300"><i data-lucide="check-circle" class="text-yellow-500 mr-2 flex-shrink-0 w-5 h-5"></i> Renderizado de exteriores con Drone</li>
+                    </ul>
+                    <button class="w-full bg-white text-slate-950 py-3 rounded-sm font-semibold hover:bg-slate-200 transition-colors">Contactar Ventas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ (Preguntas Frecuentes) -->
+    <section class="py-24 px-6 lg:px-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border border-slate-200 rounded-sm bg-white overflow-hidden shadow-sm">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition-colors" onclick="toggleFaq(1)">
+                        <span class="font-bold text-slate-800 pr-4">¿Cuánto tiempo tardan en escanear la propiedad?</span>
+                        <i id="icon-1" data-lucide="chevron-down" class="text-slate-500 faq-icon w-5 h-5"></i>
+                    </button>
+                    <div id="content-1" class="px-6 faq-content">
+                        <p class="text-slate-600 font-medium leading-relaxed">El proceso es increíblemente rápido y no invasivo. Dependiendo del tamaño del inmueble, nuestro equipo especializado tarda entre 60 y 120 minutos en realizar un escaneo completo en alta resolución.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-slate-200 rounded-sm bg-white overflow-hidden shadow-sm">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition-colors" onclick="toggleFaq(2)">
+                        <span class="font-bold text-slate-800 pr-4">¿Funciona en dispositivos móviles?</span>
+                        <i id="icon-2" data-lucide="chevron-down" class="text-slate-500 faq-icon w-5 h-5"></i>
+                    </button>
+                    <div id="content-2" class="px-6 faq-content">
+                        <p class="text-slate-600 font-medium leading-relaxed">Sí, al 100%. Toda nuestra infraestructura digital está optimizada para funcionar con fluidez en cualquier smartphone, tablet o computadora, sin necesidad de que el cliente descargue ninguna aplicación extra.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-slate-200 rounded-sm bg-white overflow-hidden shadow-sm">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition-colors" onclick="toggleFaq(3)">
+                        <span class="font-bold text-slate-800 pr-4">¿Puedo integrarlo a portales inmobiliarios?</span>
+                        <i id="icon-3" data-lucide="chevron-down" class="text-slate-500 faq-icon w-5 h-5"></i>
+                    </button>
+                    <div id="content-3" class="px-6 faq-content">
+                        <p class="text-slate-600 font-medium leading-relaxed">Por supuesto. Te entregamos enlaces compatibles y códigos de inserción (embeds) que funcionan perfectamente en plataformas como Airbnb, Inmuebles24, tu propio sitio web y redes sociales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER Y FORMULARIO DE CONTACTO -->
+    <footer id="contacto" class="bg-slate-950 text-white relative border-t-4 border-yellow-500">
+        <div class="py-20 px-6 lg:px-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Da el salto al Real Estate Digital.</h2>
+                <p class="text-slate-400 text-lg mb-8">
+                    Déjanos tus datos y un experto analizará tu portafolio para recomendarte la estrategia tecnológica exacta que multiplicará tus cierres.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center text-slate-300">
+                        <i data-lucide="clock" class="text-yellow-500 mr-3 w-5 h-5"></i>
+                        <span>Respuesta en menos de 30 minutos</span>
+                    </div>
+                    <div class="flex items-center text-slate-300">
+                        <i data-lucide="globe" class="text-yellow-500 mr-3 w-5 h-5"></i>
+                        <span>Cobertura a nivel nacional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario Simple -->
+            <div class="bg-slate-900 p-8 rounded-lg shadow-2xl border border-slate-800">
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Formulario enviado (Demo)');">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Nombre Completo</label>
+                        <input type="text" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="Ej. Carlos Mendoza">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Teléfono (WhatsApp)</label>
+                        <input type="tel" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="Tu número a 10 dígitos">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Tipo de Propiedad / Negocio</label>
+                        <select class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-slate-300 focus:outline-none focus:border-yellow-500 transition-colors appearance-none">
+                            <option value="">Selecciona una opción...</option>
+                            <option value="renta">Renta Residencial</option>
+                            <option value="airbnb">Airbnb / Renta Vacacional</option>
+                            <option value="desarrollo">Desarrollo Inmobiliario Nuevo</option>
+                            <option value="oficinas">Oficinas / Comercial</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-yellow-500 text-slate-900 py-4 rounded-sm font-bold text-lg hover:bg-yellow-400 transition-colors mt-4">
+                        Solicitar Diagnóstico Gratuito
+                    </button>
+                </form>
+            </div>
+
+        </div>
+        
+        <div class="bg-black py-6 text-center text-slate-600 text-sm font-mono border-t border-slate-900">
+            <p>&copy; 2026 7Services - Gemelos Digitales e IA para Real Estate. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script para los Iconos y el acordeón FAQ -->
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Lógica de Preguntas Frecuentes (Acordeón)
+        let activeFaq = null;
+
+        function toggleFaq(index) {
+            const content = document.getElementById(`content-${index}`);
+            const icon = document.getElementById(`icon-${index}`);
+
+            // Si se hace clic en el que ya está abierto, se cierra
+            if (activeFaq === index) {
+                content.style.maxHeight = '0px';
+                content.style.opacity = '0';
+                content.classList.remove('py-5', 'border-t', 'border-slate-100');
+                icon.style.transform = 'rotate(0deg)';
+                activeFaq = null;
+                return;
+            }
+
+            // Si hay otro abierto, lo cerramos
+            if (activeFaq !== null) {
+                const prevContent = document.getElementById(`content-${activeFaq}`);
+                const prevIcon = document.getElementById(`icon-${activeFaq}`);
+                if (prevContent) {
+                    prevContent.style.maxHeight = '0px';
+                    prevContent.style.opacity = '0';
+                    prevContent.classList.remove('py-5', 'border-t', 'border-slate-100');
+                    prevIcon.style.transform = 'rotate(0deg)';
+                }
+            }
+
+            // Abrimos el seleccionado
+            content.style.maxHeight = '200px'; 
+            content.style.opacity = '1';
+            content.classList.add('py-5', 'border-t', 'border-slate-100');
+            icon.style.transform = 'rotate(180deg)';
+            activeFaq = index;
+        }
+    </script>
 </body>
 </html>
