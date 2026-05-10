@@ -373,8 +373,7 @@
 
             <!-- Formulario Simple -->
             <div class="bg-slate-900 p-8 rounded-lg shadow-2xl border border-slate-800">
-              <form action="https://formspree.io/f/mbdwpneo" method="POST" class="space-y-6">
-        
+              <form class="space-y-6" onsubmit="event.preventDefault(); alert('Formulario enviado (Demo)');">
                     <div>
                         <label class="block text-sm font-medium text-slate-400 mb-2">Nombre Completo</label>
                         <input type="text" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="Ej. Carlos Mendoza">
