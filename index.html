@@ -25,6 +25,16 @@
         .faq-icon {
             transition: transform 0.3s ease-in-out;
         }
+        /* Video de fondo */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
     </style>
 </head>
 <body class="font-sans text-slate-800 bg-white min-h-screen relative">
@@ -56,12 +66,12 @@
 
     <!-- 1. HERO SECTION (El Gancho) -->
     <header class="relative bg-slate-900 text-white py-32 px-6 lg:px-20 min-h-[85vh] flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-40">
-            <div class="w-full h-full bg-slate-800 flex items-center justify-center">
-                <i data-lucide="box" class="text-slate-700 animate-pulse w-32 h-32"></i>
-            </div>
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent z-0"></div>
+        <!-- Video de fondo -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="SHORT-INTRO-480p-MP4.mp4" type="video/mp4">
+        </video>
+        
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent z-1"></div>
         
         <div class="relative z-10 max-w-3xl">
             <div class="inline-flex items-center space-x-2 bg-slate-800/50 border border-slate-700 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
