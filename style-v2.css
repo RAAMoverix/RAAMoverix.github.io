@@ -1,87 +1,65 @@
-/* Fuente y estilo general */
 body {
+  font-family: 'Georgia', serif;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background-color: #000;
+  padding: 0;
+  color: #333;
+  background-color: #fafafa;
 }
 
-/* Hero con imagen de fondo */
 .hero {
-  position: relative;
-  height: 100vh;
-  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: url('fondo-lujo.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin: 20px 0;
+}
+
+.cta {
+  display: inline-block;
+  background: #c49b63;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+section {
+  padding: 60px 20px;
   text-align: center;
 }
 
-/* Capa oscura para contraste */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-}
-
-/* Contenido centrado */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-}
-
-.hero-content h1 {
-  font-size: 2.8em;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  color: #ddd;
-}
-
-/* Barra de búsqueda */
-.search-bar {
+.cards {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 10px 20px;
-  border-radius: 50px;
-  backdrop-filter: blur(10px);
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.search-bar select,
-.search-bar input {
-  border: none;
-  padding: 10px 15px;
-  border-radius: 25px;
-  font-size: 1em;
-  outline: none;
-}
-
-.search-bar button {
-  background-color: #d4af37;
-  border: none;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.search-bar button:hover {
-  background-color: #ffd700;
-}
-
-/* Footer */
-footer {
-  text-align: center;
+.card {
+  background: white;
+  border: 1px solid #ddd;
   padding: 20px;
-  background-color: #111;
-  font-size: 0.9em;
-  color: #aaa;
+  border-radius: 6px;
+  width: 280px;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer form {
+  margin-top: 20px;
+}
+
+footer input, footer button {
+  padding: 10px;
+  margin: 5px;
 }
