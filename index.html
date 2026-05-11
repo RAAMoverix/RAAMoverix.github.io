@@ -381,28 +381,37 @@
                 </div>
             </div>
 
-            <!-- Formulario Simple -->
-            <div class="bg-slate-900 p-8 rounded-lg shadow-2xl border border-slate-800">
-              <form class="space-y-6" onsubmit="event.preventDefault(); alert('Formulario enviado (Demo)');">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-400 mb-2">Nombre Completo</label>
-                        <input type="text" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="Tu nombre completo">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-400 mb-2">Teléfono (WhatsApp)</label>
-                        <input type="tel" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="+52 5555555555">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-400 mb-2">Tipo de Propiedad / Negocio</label>
-                        <select class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-slate-300 focus:outline-none focus:border-yellow-500 transition-colors appearance-none">
-                            <option value="">Selecciona una opción...</option>
-                            <option value="renta">Renta Residencial</option>
-                            <option value="airbnb">Airbnb / Renta Vacacional</option>
-                            <option value="desarrollo">Desarrollo Inmobiliario Nuevo</option>
-                            <option value="oficinas">Oficinas / Comercial</option>
-                        </select>
-                    </div>
-                    <form id="diagnostico-form" action="https://formspree.io/f/mbdwpneo" method="POST">
+         <!-- Formulario Simple -->
+<div class="bg-slate-900 p-8 rounded-lg shadow-2xl border border-slate-800">
+  <form id="diagnostico-form" action="https://formspree.io/f/mbdwpneo" method="POST" class="space-y-6">
+    
+    <div>
+      <label class="block text-sm font-medium text-slate-400 mb-2">Nombre Completo</label>
+      <input type="text" name="nombre" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="Tu nombre completo" required>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-slate-400 mb-2">Teléfono (WhatsApp)</label>
+      <input type="tel" name="telefono" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="+52 5555555555" required>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-slate-400 mb-2">Tipo de Propiedad / Negocio</label>
+      <select name="tipo" class="w-full bg-slate-800 border border-slate-700 rounded-sm px-4 py-3 text-slate-300 focus:outline-none focus:border-yellow-500 transition-colors appearance-none" required>
+        <option value="">Selecciona una opción...</option>
+        <option value="renta">Renta Residencial</option>
+        <option value="airbnb">Airbnb / Renta Vacacional</option>
+        <option value="desarrollo">Desarrollo Inmobiliario Nuevo</option>
+        <option value="oficinas">Oficinas / Comercial</option>
+      </select>
+    </div>
+
+    <button type="submit" class="w-full bg-yellow-500 text-slate-900 py-4 rounded-sm font-bold text-lg hover:bg-yellow-400 transition-colors mt-4">
+      Solicitar Diagnóstico Gratuito
+    </button>
+  </form>
+</div>
+
   <!-- tus campos aquí -->
                     <button type="submit" class="w-full bg-yellow-500 text-slate-900 py-4 rounded-sm font-bold text-lg hover:bg-yellow-400 transition-colors mt-4">
                         Solicitar Diagnóstico Gratuito
