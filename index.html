@@ -39,6 +39,12 @@
         }
     </style>
 </head>
+    <script>
+  // Animación del botón flotante
+  const boton = document.querySelector('.whatsapp-btn');
+  boton.addEventListener('mouseover', () => boton.style.transform = 'scale(1.1)');
+  boton.addEventListener('mouseout', () => boton.style.transform = 'scale(1)');
+</script>
 <body class="font-sans text-slate-800 bg-white min-h-screen relative">
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
